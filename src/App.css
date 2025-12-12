@@ -43,7 +43,31 @@
 
 .countries-container {
     display: flex;
-
     flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1em;
+
+
+
+
+}
+
+.country-card{
+    max-width: 600px;
+    border:3px solid red;
+}
+.country-card img{
+    width: 20em;
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+.header .search-icon{
+    padding: 2rem;
+
 
 }
