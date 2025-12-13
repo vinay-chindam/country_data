@@ -71,3 +71,15 @@
 
 
 }
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3rem;
+
+}
+.input{
+    padding: 1em;
+    border: 1px solid white;
+
+}
