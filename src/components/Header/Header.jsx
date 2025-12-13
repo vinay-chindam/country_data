@@ -1,8 +1,10 @@
 
 import {IoSearch} from "react-icons/io5";
+import { FaSun } from "react-icons/fa";
+import { FaMoon } from "react-icons/fa";
 
 export default function Header({props}){
-    const {data,setData,allCountries,setAllCountries}=props
+    const {data,setData,allCountries,setAllCountries,theme,setTheme}=props
 
     function  handleCountryChange(e){
         const text = e.target.value.toLowerCase();
@@ -12,6 +14,7 @@ export default function Header({props}){
         setData(filtered);
 
     }
+    console.log(theme)
 
 
 
@@ -26,6 +29,15 @@ export default function Header({props}){
                    />
 
                    <IoSearch className="search-icon" />
+
+
+                   {
+                       theme === "dark" ? (<FaSun onClick={()=>setTheme('light')} />):
+                           (<FaMoon onClick={()=>setTheme('dark')} />)
+                   }
+
+
+
                </div>
 
 

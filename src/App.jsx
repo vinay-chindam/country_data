@@ -3,6 +3,8 @@ import './App.css'
 import {useEffect, useState} from "react";
 import CountryData from "./components/CountryData.jsx";
 import Header from "./components/Header/Header.jsx";
+import CountrySkeleton from "./components/CountrySkeleton.jsx";
+import {Atom} from "react-loading-indicators";
 
 
 
@@ -12,6 +14,14 @@ function App() {
     const [windowSize, setWindowSize] = useState({
         width:window.innerWidth,height:window.innerHeight
     });
+
+    const [loading, setLoading] = useState(true);
+
+    const [theme, setTheme] = useState("light");
+    useEffect(() => {
+        document.documentElement.setAttribute("data-theme", theme);
+    }, [theme]);
+
 
 
 
@@ -35,6 +45,7 @@ function App() {
                 const data = await res.json();
                 setData(data);
                 setAllCountries(data);
+                setLoading(false);
 
             } catch (err) {
                 console.error(err);
@@ -44,31 +55,27 @@ function App() {
         loadData();
     }, []);
 
-
-
-    if(data.length===0){
+    if (loading) {
         return(
-           <h1>Hello</h1>
-        )
-
-
+            <Atom color={["#32cd32", "#327fcd", "#cd32cd", "#cd8032"]} />
+            )
 
     }
 
+
+
+
+
     return (
         <>
-            <Header props={{data,setData,allCountries,setAllCountries}}/>
+            <Header props={{ data, setData, allCountries, setAllCountries, theme, setTheme }} />
 
             <div className="countries-container">
-                {/*<div>Window width is {windowSize.width} X {windowSize.height}</div>*/}
                 {data.map(country => (
-                    <CountryData country={country}/>
-
+                    <CountryData key={country.cca3} country={country} />
                 ))}
             </div>
-
         </>
-
     );
 
 }

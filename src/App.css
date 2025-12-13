@@ -3,7 +3,25 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+    --bg: #ffff;
+    --text: #111111;
+    --card: #f5f5f5;
 }
+
+[data-theme="dark"] {
+    --bg: #121212;
+    --text: #eaeaea;
+    --card: #1e1e1e;
+}
+body {
+    background-color: var(--bg);
+    color: var(--text);
+}
+
+.card {
+    background-color: var(--card);
+}
+
 
 .logo {
   height: 6em;
@@ -83,3 +101,5 @@
     border: 1px solid white;
 
 }
+
+
