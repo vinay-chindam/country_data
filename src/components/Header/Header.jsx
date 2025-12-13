@@ -3,8 +3,14 @@ import {IoSearch} from "react-icons/io5";
 import { FaSun } from "react-icons/fa";
 import { FaMoon } from "react-icons/fa";
 
-export default function Header({props}){
-    const {data,setData,allCountries,setAllCountries,theme,setTheme}=props
+export default function Header({
+                                   data,
+                                   setData,
+                                   allCountries,
+                                   setAllCountries,
+                                   theme,
+                                   setTheme
+                               }){
 
     function  handleCountryChange(e){
         const text = e.target.value.toLowerCase();

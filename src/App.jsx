@@ -1,19 +1,18 @@
 
 import './App.css'
+import { Routes, Route } from "react-router-dom";
 import {useEffect, useState} from "react";
-import CountryData from "./components/CountryData.jsx";
-import Header from "./components/Header/Header.jsx";
-import CountrySkeleton from "./components/CountrySkeleton.jsx";
+
 import {Atom} from "react-loading-indicators";
+import Home from "./components/Home.jsx";
+import CountryDetail from "./components/CountryDetail.jsx";
 
 
 
 function App() {
     const [data,setData] = useState([])
     const [allCountries, setAllCountries] = useState([]);
-    const [windowSize, setWindowSize] = useState({
-        width:window.innerWidth,height:window.innerHeight
-    });
+
 
     const [loading, setLoading] = useState(true);
 
@@ -67,15 +66,26 @@ function App() {
 
 
     return (
-        <>
-            <Header props={{ data, setData, allCountries, setAllCountries, theme, setTheme }} />
+        <Routes>
+            <Route
+                path="/"
+                element={
+                    <Home
+                        data={data}
+                        setData={setData}
+                        allCountries={allCountries}
+                        setAllCountries={setAllCountries}
+                        theme={theme}
+                        setTheme={setTheme}
+                    />
+                }
+            />
 
-            <div className="countries-container">
-                {data.map(country => (
-                    <CountryData key={country.cca3} country={country} />
-                ))}
-            </div>
-        </>
+            <Route
+                path="/country/:code"
+                element={<CountryDetail allCountries={allCountries} />}
+            />
+        </Routes>
     );
 
 }
