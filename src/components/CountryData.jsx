@@ -1,4 +1,5 @@
 import {useNavigate} from "react-router-dom";
+import '../App.css'
 
 
 function CountryData({country}) {
@@ -13,13 +14,13 @@ function CountryData({country}) {
             <div className="country-card" key={country.cca3} onClick={handleClick}>
                 <img src={country.flags.svg} className="flag" />
 
-                <div>
-                    <h5>{country.name.official}</h5>
-                    <h5>{country.capital}</h5>
-                    <h5>{country.region}</h5>
-                    <h5>{country.subregion}</h5>
-                    <h5>{country.area}</h5>
-                    <h5>{country.population}</h5>
+                <div className='country-details'>
+                    <h5>Name:{country.name.official}</h5>
+                    <h5>Capital{country.capital}</h5>
+                    <h5>Region:{country.region}</h5>
+                    <h5>Subregion:{country.subregion}</h5>
+                    <h5>Area:{country.area}</h5>
+                    <h5>Population:{country.population}</h5>
 
 
                 </div>

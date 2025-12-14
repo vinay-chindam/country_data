@@ -22,7 +22,7 @@ function CountryDetail({ allCountries }) {
         <div>
             <div className="size-container">{width} X {height}</div>
             <button onClick={()=>navigate(-1)}>Click to go back</button>
-            <h1>{country.name.common}</h1>
+            <h1>:{country.name.common}</h1>
             <img src={country.flags.svg} width="200" />
             <p>Capital: {country.capital}</p>
             <p>Region: {country.region}</p>

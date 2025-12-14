@@ -28,7 +28,7 @@ export default function Header({
 
            <div className="header">
                <h1>Countries Data</h1>
-               <div className="navbar">
+               <div className="navbar user-form">
                    <input className="input"
                        placeholder="enter country name"
                        onChange={handleCountryChange}
