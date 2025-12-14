@@ -118,4 +118,47 @@ body {
 
 }
 
+.user-form {
+    max-width: 400px;
+    margin: 40px auto;
+    padding: 24px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.user-form h2 {
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+.user-form input {
+    width: 90%;
+    padding: 10px 14px;
+    margin-bottom: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    background-color: #EAECEF;
+    color: black;
+
+}
+
+.user-form input:focus {
+    border-color: #2563eb;
+}
+
+.user-form button {
+    width: 100%;
+    padding: 10px;
+    background: #2563eb;
+    color: black;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.user-form button:hover {
+    background: #1d4ed8;
+}
 

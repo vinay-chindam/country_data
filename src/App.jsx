@@ -7,6 +7,7 @@ import {Atom} from "react-loading-indicators";
 import Home from "./components/Home.jsx";
 import CountryDetail from "./components/CountryDetail.jsx";
 import Header from "./components/Header/Header.jsx";
+import UserForm from "./components/UserForm.jsx";
 
 
 function App() {
@@ -86,7 +87,7 @@ function App() {
             />
             <Route
                 path="/contact"
-                element={<h1>Contact Us</h1>}
+                element={<UserForm/>}
             />
         </Routes>
 
