@@ -12,11 +12,18 @@
     --card: #1e1e1e;
 }
 
+
 #root {
     max-width: 1280px;
     margin: 0 auto;
     padding: 2rem;
     text-align: center;
+}
+
+.size-container{
+    text-align: center;
+    font:bold 24px/1.5 "Helvetica Neue",Helvetica,Arial,sans-serif;
+
 }
 
 

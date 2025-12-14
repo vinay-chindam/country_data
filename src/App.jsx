@@ -6,7 +6,7 @@ import {useEffect, useState} from "react";
 import {Atom} from "react-loading-indicators";
 import Home from "./components/Home.jsx";
 import CountryDetail from "./components/CountryDetail.jsx";
-
+import Header from "./components/Header/Header.jsx";
 
 
 function App() {
@@ -16,25 +16,13 @@ function App() {
 
     const [loading, setLoading] = useState(true);
 
+
     const [theme, setTheme] = useState("light");
     useEffect(() => {
         document.documentElement.setAttribute("data-theme", theme);
     }, [theme]);
 
 
-
-
-    useEffect(() => {
-        const handleResize = () => {
-            setWindowSize({
-                width: window.innerWidth,
-                height: window.innerHeight
-            });
-        };
-
-        window.addEventListener('resize', handleResize);
-        return () => window.removeEventListener('resize', handleResize);
-    }, []); // run once on mount
 
 
     useEffect(() => {
@@ -66,6 +54,17 @@ function App() {
 
 
     return (
+        <>
+
+        <Header
+            data={data}
+            setData={setData}
+            allCountries={allCountries}
+            setAllCountries={setAllCountries}
+            theme={theme}
+            setTheme={setTheme}
+        />
+
         <Routes>
             <Route
                 path="/"
@@ -85,7 +84,13 @@ function App() {
                 path="/country/:code"
                 element={<CountryDetail allCountries={allCountries} />}
             />
+            <Route
+                path="/contact"
+                element={<h1>Contact Us</h1>}
+            />
         </Routes>
+
+        </>
     );
 
 }

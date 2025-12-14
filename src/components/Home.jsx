@@ -1,18 +1,15 @@
 import CountryData from "./CountryData.jsx";
 import Header from "./Header/Header.jsx";
 
+
+import useWindowSize from "../CustomHooks/UseWindowSize.jsx";
+
 function Home({ data, setData, allCountries, setAllCountries, theme, setTheme }) {
+    const { width, height } = useWindowSize();
     return (
         <>
-            <Header
-                data={data}
-                setData={setData}
-                allCountries={allCountries}
-                setAllCountries={setAllCountries}
-                theme={theme}
-                setTheme={setTheme}
-            />
 
+            <div className="size-container">{width} X {height}</div>
             <div className="countries-container">
                 {data.map(country => (
                     <CountryData key={country.cca3} country={country} />
